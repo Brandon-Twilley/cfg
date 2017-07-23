@@ -1,0 +1,29 @@
+sw_volume: 90
+audio_device_state:1:my_fifo
+audio_device_state:1:Sound Card
+state: pause
+current: 11
+time: 112.837000
+random: 1
+repeat: 1
+single: 0
+consume: 0
+crossfade: 5
+mixrampdb: 0.000000
+mixrampdelay: -1.000000
+playlist_begin
+0:Cat Power/Dark End of the Street/Who Knows Where The Time Goes (Sandy Denny  Fairport Convention) .mp3
+1:Cat Power/Dark End of the Street/Fortunate Son (Creedence Clearwater Revival).mp3
+2:Cat Power/Dark End of the Street/Ye Auld Triangle (The Pogues).mp3
+3:Cat Power/Dear Sir/Itchyhead.mp3
+4:Cat Power/Dear Sir/Mr. Gallo.mp3
+5:Cat Power/Dear Sir/No Matter.mp3
+6:Cat Power/Dear Sir/Headlights.mp3
+7:Cat Power/Dear Sir/Runt 6.mp3
+8:Blind Willie McTell/Blind Man Blues/Statesboro' Blues.mp3
+9:Cat Power/Dark End of the Street/Fortunate Son (Creedence Clearwater Revival).mp3
+10:Cat Power/Dear Sir/Mr. Gallo.mp3
+11:Cat Power/Dear Sir/Runt 6.mp3
+12:Blind Willie McTell/Blind Man Blues/Statesboro' Blues.mp3
+13:Belton Sutherland & Clyde Maxwell/Clyde Maxwell's porch/Blues.mp3
+playlist_end

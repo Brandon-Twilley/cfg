@@ -1,0 +1,6 @@
+#!/bin/sh
+sudo feh --bg-scale '/home/rocket/Pictures/colorful_skull-wallpaper-1920x1200.jpg' &
+
+sudo xmobar &
+sudo mpd &
+

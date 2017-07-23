@@ -1,0 +1,212 @@
+<?xml version="1.0"?>
+<JWM>
+    <!-- Autostart applications -->
+    <StartupCommand>feh --bg-scale /home/ap0ll0_13/Backgrounds/skulls-colorful_00271621.jpg</StartupCommand>
+
+    <!-- The root menu. -->
+    <RootMenu onroot="3">
+
+        <Program label="Terminal">lxterminal</Program>
+        <Program label="File Manager">pcmanfm</Program>
+        <Program label="Chromium">chromium</Program>
+        <Program label="Editor">l3afpad</Program>
+        <Program label="Golang IDE">liteide</Program> 
+
+	<Separator/>
+
+        <Menu label="games">
+		<Program label="Dwarf Fortress">exec PyLNP </Program>
+	</Menu>
+	
+	<Menu label="Aud10">
+		<Program label="start mpd server">mpd</Program>
+		<Program label="player">lxterminal -e ncmpcpp</Program>
+		<Program label="k1ll s3rv3r">killall mpd</Program>
+		<Program label="lmss">lmms</Program>>
+
+	        <Menu label="h3lp plz">
+        	        <Program label="ncmpcpp Ch3atsh33t">firefox .tutorials/ncmpcpp\ cheat\ sheet.html</Program>
+        	</Menu>
+    	</Menu>
+
+        <Menu label="l33t h4x">
+                <Program label="Golang">liteide</Program>
+                <Program label="c/c++">codeblocks</Program>
+		<Program label="java">netbeans</Program>
+		<Program label="radare2 cheatsheet">firefox /home/ap0ll0_13/.radare2/cheatsheets_radare2.html</Program>
+	</Menu>
+
+	<Menu label="Office">
+		<Program label="libreoffice">libreoffice</Program>
+	</Menu>
+	
+        <Menu label="1nt3rw3bz">
+		<Program label="D1sc0rd">lxterminal -e /home/ap0ll0_13/go/bin/discord-cli</Program>
+                <Program label="Firefox">firefox</Program>
+                <Program label="0n10n">./home/ap0ll0_13/Downloads/tor-browser_en-US/start-tor-browser.desktop</Program>
+		<Program label="get wifi">lxterminal -e `sudo wifi-menu`</Program>
+        	<Menu label="nginx">
+			<Program label="nginx cheatsheet">firefox .tutorials/Nginx\ Cheat\ Sheet.htm</Program>
+			<Program label="nginx location block">firefox .tutorials/locationblock.htm</Program>
+		</Menu>
+		
+	</Menu>
+
+	
+        <Separator/>
+
+    <Menu label="Conf JWM">
+	<Program label="nano ~/.jwmrc">lxterminal -e man jwm</Program>
+    </Menu>
+
+    <Menu label="Exit">
+        <Exit label="Leave JWM" confirm="true"/>
+        <Restart label="Restart JWM"/>
+        <Separator/>
+        <Program label="Reboot">exec systemctl reboot</Program>
+        <Program label="Shutdown">exec systemctl poweroff</Program>
+    </Menu>
+
+    </RootMenu>
+
+    <!-- Options for program groups. -->
+    <Group>
+        <Option>tiled</Option>
+        <Option>aerosnap</Option>
+    </Group>
+
+    <!-- Tray at the bottom. -->
+    <Tray x="0" y="-15" autohide="off">
+	<Spacer width="5"/>
+	<TrayButton label="menu">root:3</TrayButton>
+	<Spacer width="5"/>
+        <Pager labeled="true"/>
+        <TaskList maxwidth="256"/>
+        <Dock/>
+    </Tray>
+
+    <!-- Visual Styles -->
+    <WindowStyle>
+        <Font>Roman-10</Font>
+        <Width>4</Width>
+        <Height>18</Height>
+        <Corner>0</Corner>
+        <Foreground>#FFFFFF</Foreground>
+        <Background>#010101</Background>
+        <Outline>#000000</Outline>
+        <Opacity>0.5</Opacity>
+        <Active>
+            <Foreground>#FFFFFF</Foreground>
+            <Background>#121212</Background>
+            <Outline>#000000</Outline>
+            <Opacity>1.0</Opacity>
+        </Active>
+    </WindowStyle>
+
+    <TrayStyle group="true" list="all">
+        <Font>Roman-10</Font>
+        <Background>#010101</Background>
+        <Foreground>#FFFFFF</Foreground>
+        <Outline>#000000</Outline>
+        <Opacity>0.75</Opacity>
+    </TrayStyle>
+	   <!-- Screen number -->
+    <PagerStyle>
+
+        <Outline>#000000</Outline>
+        <Foreground>#555555</Foreground>
+        <Background>#010101</Background>
+        <Text>#FFFFFF</Text>
+
+        <Active>
+            <Foreground>#121212</Foreground>
+            <Background>#004488</Background>
+        </Active>
+
+    </PagerStyle>
+
+    <MenuStyle>
+        <Font>Roman-9</Font>
+        <Foreground>#FFFFFF</Foreground>
+        <Background>#010101</Background>
+        <Outline>#000000</Outline>
+        <Active>
+            <Foreground>#FFFFFF</Foreground>
+            <Background>#121212</Background>
+        </Active>
+        <Opacity>0.85</Opacity>
+    </MenuStyle>
+
+    <PopupStyle>
+        <Font>Sans-9</Font>
+        <Foreground>#000000</Foreground>
+        <Background>#999999</Background>
+    </PopupStyle>
+
+    <!-- Path where icons can be found.
+         IconPath can be listed multiple times to allow searching
+         for icons in multiple paths.
+      -->
+    <IconPath>
+        /usr/share/icons/wm-icons/32x32-aquafusion
+    </IconPath>
+    <IconPath>
+        /usr/share/jwm
+    </IconPath>
+
+    <!-- Virtual Desktops -->
+    <!-- Desktop tags can be contained within Desktops for desktop names. -->
+    <Desktops width="4" height="1">
+        <!-- Default background. Note that a Background tag can be
+              contained within a Desktop tag to give a specific background
+              for that desktop.
+         -->
+    <!--    <Background type="solid">#111111</Background> -->
+    </Desktops>
+
+    <!-- Double click speed (in milliseconds) -->
+    <DoubleClickSpeed>400</DoubleClickSpeed>
+
+    <!-- Double click delta (in pixels) -->
+    <DoubleClickDelta>2</DoubleClickDelta>
+
+    <!-- The focus model (sloppy or click) -->
+    <FocusModel>sloppy</FocusModel>
+
+    <!-- The snap mode (none, screen, or border) -->
+    <SnapMode distance="10">border</SnapMode>
+
+    <!-- The move mode (outline or opaque) -->
+    <MoveMode coordinates="off">opaque</MoveMode>
+
+    <!-- The resize mode (outline or opaque) -->
+    <ResizeMode>opaque</ResizeMode>
+
+    <!-- Key bindings -->
+    <Key key="Up">up</Key>
+    <Key key="Down">down</Key>
+    <Key key="Right">right</Key>
+    <Key key="Left">left</Key>
+    <Key key="h">left</Key>
+    <Key key="j">down</Key>
+    <Key key="k">up</Key>
+    <Key key="l">right</Key>
+    <Key key="Return">select</Key>
+    <Key key="Escape">escape</Key>
+
+    <Key mask="A" key="Tab">nextstacked</Key>
+    <Key mask="A" key="F4">close</Key>
+    <Key mask="A" key="#">desktop#</Key>
+    <Key mask="A" key="F1">root:3</Key>
+    <Key mask="A" key="F2">window</Key>
+    <Key mask="A" key="F10">maximize</Key>
+    <Key mask="A" key="Right">rdesktop</Key>
+    <Key mask="A" key="Left">ldesktop</Key>
+    <Key mask="A" key="Up">udesktop</Key>
+    <Key mask="A" key="Down">ddesktop</Key>
+
+    <Key mask="4" key="t">exec:lxterminal</Key>
+    <Key mask="4" key="b">exec:netsurf</Key>
+    <Key mask="4" key="f">exec:pcmanfm</Key>
+    <Key mask="A" key="F3">exec:~/.config/dmenu/dmenu-bind.sh</Key>
+</JWM>

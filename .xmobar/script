@@ -1,0 +1,5 @@
+TEXT=`exec ncmpcpp --current-song`
+PURPLE="\033[35m"
+
+echo -e $TEXT
+

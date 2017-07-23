@@ -1,0 +1,65 @@
+Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
+       , additionalFonts = []
+       , borderColor = "black"
+       , border = TopB
+       , bgColor = "black"
+       , fgColor = "grey"
+       , alpha = 255
+       , position = Static {xpos = 0, ypos = 753, width = 1366 , height = 15}
+       , textOffset = -1
+       , iconOffset = -1
+       , lowerOnStart = True
+       , pickBroadest = False
+       , persistent = False
+       , hideOnStart = False
+       , iconRoot = "."
+       , allDesktops = True
+       , overrideRedirect = True
+       , commands = [ Run Weather "EGPF" ["-t","<station>: <tempC>C",
+                                          "-L","18","-H","25",
+                                          "--normal","green",
+                                          "--high","red",
+                                          "--low","lightblue"] 36000
+                    , Run Network "wlp1s0" ["-L","0","-H","32",
+                                          
+"--normal","green","--high","red"] 10
+                    , Run Network "eth1" ["-L","0","-H","32",
+                                          
+"--normal","green","--high","red"] 10
+                    , Run Cpu ["-L","3","-H","50",
+                               "--normal","green","--high","red"] 10
+                    , Run Memory ["-t","Mem: <usedratio>%"] 10
+
+		    , Run DynNetwork     [ "--template" , "<dev>: <tx>kB/s|<rx>kB/s"
+                             , "--Low"      , "1000"       -- units: kB/s
+                             , "--High"     , "5000"       -- units: kB/s
+                             , "--low"      , "darkgreen"
+                             , "--normal"   , "darkorange"
+                             , "--high"     , "darkred"
+                             ] 10
+
+		    , Run Com "/home/rocket/.xmobar/script" ["&"] "mpd" 10
+		    , Run Com "/home/rocket/.xmobar/swa" ["&"] "swa" 36000
+	            , Run Battery        [ "--template" , "Batt: <acstatus>"
+                             , "--Low"      , "15"        -- units: %
+                             , "--High"     , "80"        -- units: %
+                             , "--low"      , "darkred"
+                             , "--normal"   , "darkorange"
+                             , "--high"     , "darkgreen"
+
+                             , "--" -- battery specific options
+                                       -- discharging status
+                                       , "-o"	, "<left>% (<timeleft>)"
+                                       -- AC "on" status
+                                       , "-O"	, "<fc=#dAA520>Charging</fc> <left>%"
+                                       -- charged status
+                                       , "-i"	, "<fc=#006000>Charged</fc>"] 50
+
+                    , Run Com "uname" ["-s","-r"] "" 36000
+                    , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = " <fc=#ff0000>%swa%</fc> %cpu% | %memory% | %dynnetwork% } <fc=#ff0000>%swa%</fc> <fc=#8b008b>%mpd%</fc> <fc=#ff0000>%swa%</fc> { %battery% | <fc=#ee9a00>%date%</fc> | <fc=#00ffff>%uname%</fc> <fc=#ff0000>%swa%</fc>"
+       }
+
